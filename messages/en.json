@@ -1,0 +1,25 @@
+{
+    "menu": {
+        "home": "Home",
+        "product": "Product",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "language": {
+        "en": "English",
+        "kh": "Khmer"
+    },
+    "signup": {
+        "title": "Sign Up",
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "password": "Password",
+        "register": "Register",
+        "qa":"Already have an account? ",
+        "loginPrompt": "Log in",
+        "signUpWithGoogle": "Sign Up with Google",
+        "error": "Something went wrong. Please try again."
+    }
+
+      
+}

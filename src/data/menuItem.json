@@ -1,0 +1,21 @@
+{
+    "menuItems": [
+      {
+        "name": "home",
+        "link": "/"
+      },
+      {
+        "name": "product",
+        "link": "/product"
+      },
+      {
+        "name": "about",
+        "link": "/about"
+      },
+      {
+        "name": "contact",
+        "link": "/contact"
+      }
+    ]
+}
+  

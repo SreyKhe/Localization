@@ -1,0 +1,8 @@
+{
+    "iconItems" : [
+        { "icon": "IoMdSearch", "link": "/search" },
+        { "icon": "FaRegCircleUser", "link": "auth/signin" },
+        { "icon": "FaRegHeart", "link": "/favorite" },
+        { "icon": "RiShoppingCartLine", "link": "/cart" }
+    ]
+}
