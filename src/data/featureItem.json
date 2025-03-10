@@ -1,0 +1,98 @@
+[
+    {
+      "name": "Kopari",
+      "description": "While not from Korea, Kopari has built a devoted fan base with its products, starring coconut, from The Philippines that is stocked at Ulta Beauty",
+      "price": "$20.00",
+      "imageUrl": "https://i.pinimg.com/736x/81/19/a4/8119a4984820d192955eee7fa7023363.jpg"
+    },
+    {
+      "name": "Sweatshirt K-pop BTS",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/736x/2b/7a/4f/2b7a4f8927b3c75b3a4d416ac57b2c2f.jpg"
+    },
+    {
+      "name": "Smartwatch Waterproof Activity Pedometer",
+      "description": "This is a featured product.",
+      "price": "$120.00",
+      "imageUrl": "https://i.pinimg.com/736x/d5/38/d1/d538d17b7b6ea2130ceb006c4e117ed8.jpg"
+    },
+    {
+      "name": "Product 2",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/236x/7f/3b/b6/7f3bb6f181f8f4b724800c40821fe2e0.jpg"
+    },
+    {
+      "name": "Product 1",
+      "description": "This is a featured product.",
+      "price": "$20.00",
+      "imageUrl": "https://i.pinimg.com/736x/81/19/a4/8119a4984820d192955eee7fa7023363.jpg"
+    },
+    {
+      "name": "Product 2",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/236x/7f/3b/b6/7f3bb6f181f8f4b724800c40821fe2e0.jpg"
+    },
+    {
+      "name": "Product 1",
+      "description": "This is a featured product.",
+      "price": "$20.00",
+      "imageUrl": "https://i.pinimg.com/736x/81/19/a4/8119a4984820d192955eee7fa7023363.jpg"
+    },
+    {
+      "name": "Product 2",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/236x/7f/3b/b6/7f3bb6f181f8f4b724800c40821fe2e0.jpg"
+    },
+    {
+      "name": "Product 1",
+      "description": "This is a featured product.",
+      "price": "$20.00",
+      "imageUrl": "https://i.pinimg.com/736x/81/19/a4/8119a4984820d192955eee7fa7023363.jpg"
+    },
+    {
+      "name": "Product 2",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/236x/7f/3b/b6/7f3bb6f181f8f4b724800c40821fe2e0.jpg"
+    },
+    {
+      "name": "Product 1",
+      "description": "This is a featured product.",
+      "price": "$20.00",
+      "imageUrl": "https://i.pinimg.com/736x/81/19/a4/8119a4984820d192955eee7fa7023363.jpg"
+    },
+    {
+      "name": "Product 2",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/236x/7f/3b/b6/7f3bb6f181f8f4b724800c40821fe2e0.jpg"
+    },
+    {
+      "name": "Product 1",
+      "description": "This is a featured product.",
+      "price": "$20.00",
+      "imageUrl": "https://i.pinimg.com/736x/81/19/a4/8119a4984820d192955eee7fa7023363.jpg"
+    },
+    {
+      "name": "Product 2",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/236x/7f/3b/b6/7f3bb6f181f8f4b724800c40821fe2e0.jpg"
+    },
+    {
+      "name": "Product 1",
+      "description": "This is a featured product.",
+      "price": "$20.00",
+      "imageUrl": "https://i.pinimg.com/736x/81/19/a4/8119a4984820d192955eee7fa7023363.jpg"
+    },
+    {
+      "name": "Product 2",
+      "description": "Another amazing product.",
+      "price": "$25.00",
+      "imageUrl": "https://i.pinimg.com/236x/7f/3b/b6/7f3bb6f181f8f4b724800c40821fe2e0.jpg"
+    }
+]
