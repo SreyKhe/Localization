@@ -9,7 +9,8 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "lh3.googleusercontent.com",
             }
-        ]
+        ],
+        domains: ["i.pinimg.com"], // ✅ Add allowed domain here
     }
 };
 

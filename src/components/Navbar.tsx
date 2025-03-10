@@ -12,6 +12,7 @@ import iconData from "../data/iconItems.json"
 import {TIcons} from "@/models/iconItems.model"
 import Image from 'next/image';
 import logo from "../../public/logo.png"
+import Link from 'next/link';
 const iconMapping: { [key: string]: React.ComponentType } = {
     IoMdSearch,
     FaRegCircleUser,
@@ -26,11 +27,13 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="bg-gray-800 text-white p-4">
+    <nav className="bg-gray-800 text-white p-4 sticky top-0 z-10">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-xl font-bold">
-          <Image src={logo} alt={'logo'} width={50} height={50} className="rounded-full"/>
+            <Link href={`/${locale}`}>
+                <Image src={logo} alt="logo" width={50} height={50} className="rounded-full" />
+            </Link>
         </div>
         {/* Navbar Links (Desktop) */}
         <div className="hidden md:flex space-x-16 items-center ">
@@ -38,7 +41,7 @@ const Navbar = () => {
                 <ul className="flex space-x-10 ">
                     {menuData.menuItems.map((item:TMenu,index:number) => (
                         <li key={index}>
-                            <a href={item.link} className="hover:text-gray-300 text-base">{t(item.name)}</a>
+                            <a href={`/${locale}${item.link}`} className="hover:text-gray-300 text-base">{t(item.name)}</a>
                         </li>
                     ))}
                 </ul>
@@ -48,9 +51,9 @@ const Navbar = () => {
                 {iconData.iconItems.map((item:TIcons, index:number) => {
                     // Dynamically get the React component using the icon name from item.icon
                     const IconComponent = iconMapping[item.icon];
-                    const localizedLink = `/${locale === "kh" ? "kh/" : "en/"}${item.link}`;
+                    
                     return (
-                    <a key={index} href={localizedLink} className="text-white text-base hover:text-gray-300">
+                    <a key={index} href={`/${locale}/${item.link}`} className="text-white text-base hover:text-gray-300">
                         <IconComponent />
                     </a>
                     );
@@ -79,7 +82,7 @@ const Navbar = () => {
             <ul className="space-y-4 p-4">
                 {menuData.menuItems.map((item:TMenu,index:number) => (
                     <li key={index}>
-                        <a href={item.link} className="hover:text-gray-300">{t(item.name)}</a>
+                        <a href={`/${locale}${item.link}`} className="hover:text-gray-300">{t(item.name)}</a>
                     </li>
                 ))}
             </ul>
@@ -88,7 +91,7 @@ const Navbar = () => {
                     // Dynamically get the React component using the icon name from item.icon
                     const IconComponent = iconMapping[item.icon];
                     return (
-                    <a key={index} href={item.link} className="text-white hover:text-gray-300">
+                    <a key={index} href={`/${locale}/${item.link}`} className="text-white hover:text-gray-300">
                         <IconComponent />
                     </a>
                     );

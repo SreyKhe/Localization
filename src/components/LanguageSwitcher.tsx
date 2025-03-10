@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEvent, useTransition } from 'react';
 import { useLocale } from 'use-intl';
 import { useTranslations } from 'next-intl'; // Use the next-intl hook for translations
@@ -8,15 +8,23 @@ import { useTranslations } from 'next-intl'; // Use the next-intl hook for trans
 const LanguageSwitcher = () => {
   const [isPening ,startTransition] = useTransition();
   const router = useRouter();
+  const pathname = usePathname();
   const localActive = useLocale();
   const t = useTranslations('language');
   // Function to handle language selection
   const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const selectedLang = e.target.value;
     
-    startTransition(()=>{
-        router.replace(`/${selectedLang}`);
-    })
+    // startTransition(()=>{
+    //     router.replace(`/${selectedLang}`);
+    // })
+    if (selectedLang !== localActive) {
+      startTransition(() => {
+        // Replace the current locale in the URL while keeping the current path
+        const newPath = `/${selectedLang}${pathname.replace(`/${localActive}`, '')}`;
+        router.replace(newPath);
+      });
+    }
     
   };
 

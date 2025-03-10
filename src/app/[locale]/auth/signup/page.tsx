@@ -1,47 +1,58 @@
 "use client";
-
-import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl"; // Import for i18n support
-import { usePathname } from "next/navigation"; // Use this to get the current path
+import { signIn } from "next-auth/react"; // Import for Google sign-in
+import { usePathname } from "next/navigation"; // Get the current path
 
 const SignUp = () => {
+  const [error, setError] = useState<string>();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
 
-  const [error, setError] = useState("");
   const router = useRouter();
-  const t = useTranslations("signup"); // Fetch translations for "signup"
-  const pathname = usePathname(); // Get current pathname
+  const ref = useRef<HTMLFormElement>(null);
+  const pathname = usePathname(); // Fix: Ensure pathname is initialized
+  const t = useTranslations("signup"); // Fix: Ensure translation is initialized
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Dynamically generate the login link based on the current locale
+  const loginLink = pathname.replace("signup", "signin");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Here you would send the data to your API (e.g., /api/register)
     const res = await fetch("/api/auth/signup", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name, // Fix: Use formData for consistency
+        email: formData.email,
+        password: formData.password,
+      }),
     });
 
     if (res.ok) {
-      router.push("/"); // Redirect to login after successful signup
+      ref.current?.reset();
+      router.push("/login"); // Redirect to login after successful signup
     } else {
-      const errorData = await res.json();
-      setError(errorData.message || t("error"));
+      try {
+        const errorData = await res.json();
+        setError(errorData.message || "Error occurred during signup");
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+        setError("Error occurred during signup");
+      }
     }
   };
-
-  // Dynamically generate the login link based on the current locale
-  const loginLink = pathname.replace('signup', 'signin');
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -50,7 +61,7 @@ const SignUp = () => {
 
         {error && <p className="text-red-500">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form ref={ref} onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="name"
@@ -90,7 +101,7 @@ const SignUp = () => {
         </form>
 
         <p className="text-gray-600 mt-4">
-          {t("qa")}
+          {t("qa")}{" "}
           <a href={loginLink} className="text-blue-500 hover:underline">
             {t("loginPrompt")}
           </a>
